@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/axetroy/deno-math.svg?branch=master)](https://travis-ci.com/axetroy/deno-math)
+
 # math
 
 The math module is used to provide helper for high-precision calculations.
