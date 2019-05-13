@@ -3,7 +3,12 @@ os:
   - osx
   - windows
 
-before_script: curl -sL https://deno.land/x/install/install.sh | sh -s v0.5.0
+env:
+  - DENO_VERSION=v0.5.0
+
+before_script:
+  - if [ "$TRAVIS_OS_NAME" = "windows" ]; then iwr https://deno.land/x/install/install.ps1 -useb -outf install.ps1; .\install.ps1 $DENO_VERSION; fi
+  - if [ "$TRAVIS_OS_NAME" != "windows" ]; then curl -sL https://deno.land/x/install/install.sh | sh -s $DENO_VERSION; fi
 
 script:
   - $HOME/.deno/bin/deno run ./test.ts
