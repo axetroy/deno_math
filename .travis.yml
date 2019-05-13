@@ -19,6 +19,7 @@ env:
 before_script:
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then iwr https://deno.land/x/install/install.ps1 -useb -outf install.ps1; .\install.ps1 $DENO_VERSION; fi
   - if [ "$TRAVIS_OS_NAME" != "windows" ]; then curl -sL https://deno.land/x/install/install.sh | sh -s $DENO_VERSION; fi
+  - $HOME/.deno/bin/deno version
 
 script:
   - $HOME/.deno/bin/deno run ./test.ts
