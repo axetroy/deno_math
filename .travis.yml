@@ -1,8 +1,10 @@
-language: python
+language: nodejs
 
-install:
-  - curl -L https://deno.land/x/install/install.py | python - v0.5.0
-  - export PATH="$HOME/.deno/bin:$PATH"
+os:
+  - linux
+  - osx
+
+before_script: curl -sL https://deno.land/x/install/install.sh | sh
 
 script:
   - $HOME/.deno/bin/deno run ./test.ts
