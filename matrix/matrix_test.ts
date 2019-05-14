@@ -188,3 +188,29 @@ test({
     );
   }
 });
+
+test({
+  name: "[matrix] trace",
+  fn(): void {
+    assertEquals(
+      new Matrix(
+        // prettier-ignore
+        [
+          [1, 2, 3],
+          [4, 5, 6]
+        ]
+      ).trace(),
+      6 // 1 + 5
+    );
+    assertEquals(
+      new Matrix(
+        // prettier-ignore
+        [
+          [1, 2, 3],
+          [4, 5, 6]
+        ]
+      ).trace(1),
+      8 // 2 + 6
+    );
+  }
+});

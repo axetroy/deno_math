@@ -124,6 +124,18 @@ export class Matrix {
     return new Matrix(output);
   }
   /**
+   * Get the trace of the Matrix
+   * @param k
+   */
+  public trace(k: number = 0): number {
+    let tack = 0;
+    for (let i = 0; i < this.matrix.length; i++) {
+      const row = this.matrix[i];
+      tack += row[i + k] || 0;
+    }
+    return tack;
+  }
+  /**
    * Transpose and return new Matrix
    */
   public transpose(): Matrix {
@@ -148,7 +160,7 @@ export class Matrix {
    * Get the value of a col
    * @param col
    */
-  public col(col: number) {
+  public col(col: number): number[] {
     return this.matrix.map(v => v[col]);
   }
   /**
@@ -156,13 +168,13 @@ export class Matrix {
    * @param row
    * @param col
    */
-  public pointAt(row: number, col: number) {
+  public pointAt(row: number, col: number): number {
     return this.matrix[row][col];
   }
   /**
    * Print to human readable string
    */
-  public toString() {
+  public toString(): string {
     const output = [];
     for (const row of this.matrix) {
       output.push(row.join(", "));
