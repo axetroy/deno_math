@@ -24,6 +24,71 @@ test({
 });
 
 test({
+  name: "[matrix] shape",
+  fn(): void {
+    const m = new Matrix([
+      // prettier-ignore
+      [1, 2, 3],
+      [4, 5, 6]
+    ]);
+
+    assertEquals(m.shape, [2, 3]);
+
+    m.shape = [3, 2];
+
+    assertEquals(m.shape, [3, 2]);
+    assertEquals(m.matrix, [
+      // prettier-ignore
+      [1, 2],
+      [3, 4],
+      [5, 6]
+    ]);
+
+    assertThrows(
+      () => {
+        m.shape = [4, 4];
+      },
+      Error,
+      "Can not change the shape from (3, 2) to (4, 4)"
+    );
+  }
+});
+
+test({
+  name: "[matrix] reshape",
+  fn(): void {
+    const m = new Matrix([
+      // prettier-ignore
+      [1, 2, 3],
+      [4, 5, 6]
+    ]);
+
+    assertEquals(m.shape, [2, 3]);
+
+    assertEquals(m.matrix, [
+      // prettier-ignore
+      [1, 2, 3],
+      [4, 5, 6]
+    ]);
+
+    const m2 = m.reshape([3, 2]);
+
+    assertEquals(m2.matrix, [
+      // prettier-ignore
+      [1, 2],
+      [3, 4],
+      [5, 6]
+    ]);
+
+    assertEquals(m.matrix, [
+      // prettier-ignore
+      [1, 2, 3],
+      [4, 5, 6]
+    ]);
+  }
+});
+
+test({
   name: "[matrix] times",
   fn(): void {
     const result = new Matrix(

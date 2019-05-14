@@ -31,6 +31,41 @@ export class Matrix {
     const rowSize = this.matrix.length;
     return [rowSize, elementSize];
   }
+  private generateNewShape(shape: Shape) {
+    const [rowNumber, colNumber] = shape;
+    const [originRowNumber, originColNumber] = this.shape;
+
+    if (rowNumber * colNumber !== originRowNumber * originColNumber) {
+      throw new Error(
+        `Can not change the shape from (${originRowNumber}, ${originColNumber}) to (${rowNumber}, ${colNumber})`
+      );
+    }
+
+    const output: IMatrix = [];
+    const origin = this.matrix.flat();
+
+    for (let i = 0; i < rowNumber; i++) {
+      let row = [];
+      while (row.length !== colNumber) {
+        row = row.concat(origin.splice(0, colNumber));
+      }
+      output.push(row);
+    }
+
+    return output;
+  }
+  /**
+   * Change the size of Matrix
+   */
+  public set shape(shape: Shape) {
+    this.matrix = this.generateNewShape(shape);
+  }
+  /**
+   * Generate the new size of Matrix
+   */
+  public reshape(shape: Shape): Matrix {
+    return new Matrix(this.generateNewShape(shape));
+  }
   /**
    * Multiply the matrix by a number or matrix. similar like `a * b`
    * @param n a number or matrix
