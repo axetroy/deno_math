@@ -2,23 +2,45 @@
 
 # math
 
-The math module is used to provide helper for high-precision calculations.
+The math module is used to provide a helper for high-precision calculations and scientific computing.
 
 ## Usage
 
 All the following modules are exposed in `mod.ts`
 
-### Big
+## Big
 
 A class for high-precision calculations.
-
-All math methods base on `Big` class.
 
 ```ts
 import { Big } from "https://deno.land/x/math/mod.ts";
 
 new Big(0.1).plus(0.2).toString(); // '0.3'
 ```
+
+[Documentation](big/README.md)
+
+## Matrix
+
+A class for `Matrix` computing.
+
+```ts
+import { Matrix } from "https://deno.land/x/math/mod.ts";
+
+const m = new Matrix([
+  [1, 2, 3],
+  [4, 5, 6]
+]).transpose()
+
+console.log(m.toString())
+/**
+1, 4
+2, 5
+3, 6
+*/
+```
+
+[Documentation](matrix/README.md)
 
 ### abs
 

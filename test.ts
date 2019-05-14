@@ -2,7 +2,7 @@
 import { runIfMain } from "https://deno.land/std/testing/mod.ts";
 
 import "./big/test.ts";
-import "./matrix/test.ts";
+import "./matrix/test";
 import "./min_test.ts";
 import "./max_test.ts";
 import "./sum_test.ts";
