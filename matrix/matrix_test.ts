@@ -136,3 +136,55 @@ test({
     );
   }
 });
+
+test({
+  name: "[matrix] transpose",
+  fn(): void {
+    assertEquals(
+      new Matrix(
+        // prettier-ignore
+        [
+          [1, 2, 3],
+          [4, 5, 6]
+        ]
+      ).transpose().matrix,
+      [
+        // prettier-ignore
+        [1, 4],
+        [2, 5],
+        [3, 6]
+      ]
+    );
+
+    assertEquals(
+      new Matrix(
+        // prettier-ignore
+        [
+          [1, 2],
+          [3, 4]
+        ]
+      ).transpose().matrix,
+      [
+        // prettier-ignore
+        [1, 3],
+        [2, 4]
+      ]
+    );
+
+    assertEquals(
+      new Matrix(
+        // prettier-ignore
+        [
+          [1, 2],
+          [3, 4],
+          [5, 6]
+        ]
+      ).transpose().matrix,
+      [
+        // prettier-ignore
+        [1, 3, 5],
+        [2, 4, 6]
+      ]
+    );
+  }
+});

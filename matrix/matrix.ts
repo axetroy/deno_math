@@ -124,7 +124,20 @@ export class Matrix {
     return new Matrix(output);
   }
   /**
-   * get the row value
+   * Transpose and return new Matrix
+   */
+  public transpose(): Matrix {
+    const output = [];
+    const [_, colSize] = this.shape;
+
+    for (let i = 0; i < colSize; i++) {
+      output.push(this.col(i));
+    }
+
+    return new Matrix(output);
+  }
+  /**
+   * Get the value of a row
    * @param row
    * @param col
    */
@@ -132,11 +145,18 @@ export class Matrix {
     return this.matrix[row];
   }
   /**
-   * get the col value
+   * Get the value of a col
+   * @param col
+   */
+  public col(col: number) {
+    return this.matrix.map(v => v[col]);
+  }
+  /**
+   * Get a value of a point
    * @param row
    * @param col
    */
-  public col(row: number, col: number) {
+  public pointAt(row: number, col: number) {
     return this.matrix[row][col];
   }
   /**
