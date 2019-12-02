@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/axetroy/deno_math.svg?branch=master)](https://travis-ci.com/axetroy/deno_math)
+[![Build Status](https://github.com/axetroy/deno_math/workflows/ci/badge.svg?branch=master)](https://github.com/axetroy/deno_math/actions)
 
 # math
 
