@@ -1,6 +1,6 @@
 // Copyright 2018-2019 the Deno authors. All rights reserved. MIT license.
-import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
-import { test } from "https://deno.land/std/testing/mod.ts";
+import { assertEquals } from "https://deno.land/std@v0.27.0/testing/asserts.ts";
+import { test } from "https://deno.land/std@v0.27.0/testing/mod.ts";
 import { identity } from "./identity.ts";
 
 test({

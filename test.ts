@@ -1,5 +1,5 @@
 // Copyright 2018-2019 the Deno authors. All rights reserved. MIT license.
-import { runIfMain } from "https://deno.land/std/testing/mod.ts";
+import { runIfMain } from "https://deno.land/std@v0.27.0/testing/mod.ts";
 
 import "./big/test.ts";
 import "./matrix/test.ts";
