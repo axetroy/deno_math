@@ -12,5 +12,5 @@ jobs:
         with:
           deno-version: 0.27.0
       - run: |
-          deno fmt --check **/*.md **/*.ts
+          deno fmt --check *.md **/*.md *.ts **/*.ts
           deno test --allow-net

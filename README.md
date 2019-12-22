@@ -30,9 +30,9 @@ import { Matrix } from "https://deno.land/x/math/mod.ts";
 const m = new Matrix([
   [1, 2, 3],
   [4, 5, 6]
-]).transpose()
+]).transpose();
 
-console.log(m.toString())
+console.log(m.toString());
 /**
 1, 4
 2, 5
