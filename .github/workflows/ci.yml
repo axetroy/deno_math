@@ -11,4 +11,6 @@ jobs:
       - uses: denolib/setup-deno@master
         with:
           deno-version: 0.25.0
-      - run: deno test --allow-net
+      - run: |
+          deno fmt --check **/*.md **/*.ts
+          deno test --allow-net

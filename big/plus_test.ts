@@ -7,7 +7,11 @@
  */
 // Copyright 2018-2019 the Deno authors. All rights reserved. MIT license.
 import { test } from "https://deno.land/std@v0.27.0/testing/mod.ts";
-import { assertEquals, assert, assertThrows } from "https://deno.land/std@v0.27.0/testing/asserts.ts";
+import {
+  assertEquals,
+  assert,
+  assertThrows
+} from "https://deno.land/std@v0.27.0/testing/asserts.ts";
 import { Big, BigSource } from "./mod.ts";
 
 function T(addendA: BigSource, addendB: BigSource, expected: BigSource) {
