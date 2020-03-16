@@ -13,7 +13,7 @@ All the following modules are exposed in `mod.ts`
 A class for high-precision calculations.
 
 ```ts
-import { Big } from "https://deno.land/x/math/mod.ts";
+import { Big } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 new Big(0.1).plus(0.2).toString(); // '0.3'
 ```
@@ -25,7 +25,7 @@ new Big(0.1).plus(0.2).toString(); // '0.3'
 A class for `Matrix` computing.
 
 ```ts
-import { Matrix } from "https://deno.land/x/math/mod.ts";
+import { Matrix } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 const m = new Matrix([
   [1, 2, 3],
@@ -47,7 +47,7 @@ console.log(m.toString());
 get a numeric absolute value.
 
 ```ts
-import { abs } from "https://deno.land/x/math/mod.ts";
+import { abs } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 abs(-1); // '1'
 abs("-0.1"); // '0.1'
@@ -58,7 +58,7 @@ abs("-0.1"); // '0.1'
 get a smaller numeric from a numeric set. Similar to `Math.min`.
 
 ```ts
-import { min } from "https://deno.land/x/math/mod.ts";
+import { min } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 min([-1, 0, "1"]); // '-1'
 ```
@@ -68,7 +68,7 @@ min([-1, 0, "1"]); // '-1'
 get a larger numeric from a numeric set. Similar to `Math.max`.
 
 ```ts
-import { max } from "https://deno.land/x/math/mod.ts";
+import { max } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 max([-1, 0, "1"]); // '1'
 ```
@@ -78,7 +78,7 @@ max([-1, 0, "1"]); // '1'
 get the sum of a numeric set.
 
 ```ts
-import { sum } from "https://deno.land/x/math/mod.ts";
+import { sum } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 sum([1, "2", 3]); // '6'
 ```
@@ -88,7 +88,7 @@ sum([1, "2", 3]); // '6'
 get the value of `a numeric` plus `another numeric`. Similar to Javascript `+` operator.
 
 ```ts
-import { plus } from "https://deno.land/x/math/mod.ts";
+import { plus } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 plus("1", 2); // '3'
 ```
@@ -98,7 +98,7 @@ plus("1", 2); // '3'
 get the value of `a numeric` minus `another numeric`. Similar to Javascript `-` operator.
 
 ```ts
-import { minus } from "https://deno.land/x/math/mod.ts";
+import { minus } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 minus("1", 2); // '-1'
 ```
@@ -108,7 +108,7 @@ minus("1", 2); // '-1'
 get the value of `a numeric` times `another numeric`. Similar to Javascript `*` operator.
 
 ```ts
-import { times } from "https://deno.land/x/math/mod.ts";
+import { times } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 times("1", 2); // '2'
 ```
@@ -118,7 +118,7 @@ times("1", 2); // '2'
 get the value of `a numeric` divided `another numeric`. Similar to Javascript `/` operator.
 
 ```ts
-import { div } from "https://deno.land/x/math/mod.ts";
+import { div } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 div("1", 2); // '0.5'
 ```
@@ -128,7 +128,7 @@ div("1", 2); // '0.5'
 get the value of `a numeric` modulo `another numeric`. Similar to Javascript `%` operator.
 
 ```ts
-import { mod } from "https://deno.land/x/math/mod.ts";
+import { mod } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 mod("3", 2); // '1'
 ```
@@ -138,7 +138,7 @@ mod("3", 2); // '1'
 get the value of `a numeric` raised to the power `another numeric`. Similar to `Math.pow`.
 
 ```ts
-import { pow } from "https://deno.land/x/math/mod.ts";
+import { pow } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 pow("3", 2); // '9'
 ```
@@ -148,7 +148,7 @@ pow("3", 2); // '9'
 get the value is the square root of `a numeric`. Similar to `Math.sqrt`.
 
 ```ts
-import { sqrt } from "https://deno.land/x/math/mod.ts";
+import { sqrt } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 sqrt("3", 2); // '1.7320508075688772'
 ```
@@ -158,7 +158,7 @@ sqrt("3", 2); // '1.7320508075688772'
 get the value of input rounded using rounding mode `rm` to a maximum of `dp` decimal places. Similar to `Math.round`.
 
 ```ts
-import { round } from "https://deno.land/x/math/mod.ts";
+import { round } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 round("3.456", 2); // '3.46'
 ```
@@ -168,7 +168,7 @@ round("3.456", 2); // '3.46'
 get an exponential notation string from `a numeric`. Similar to `Number.prototype.toExponential`.
 
 ```ts
-import { toExponential } from "https://deno.land/x/math/mod.ts";
+import { toExponential } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 toExponential("3.456", 2); // '3.46e+0'
 ```
@@ -178,7 +178,7 @@ toExponential("3.456", 2); // '3.46e+0'
 get a normal notation string from `a numeric`. Similar to `Number.prototype.toFixed`.
 
 ```ts
-import { toFixed } from "https://deno.land/x/math/mod.ts";
+import { toFixed } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 toFixed("3.4", 6); // '3.400000'
 ```
@@ -188,7 +188,7 @@ toFixed("3.4", 6); // '3.400000'
 get the value of `a numeric` to the specified number of `sd` significant digits. Similar to `Number.prototype.toPrecision`.
 
 ```ts
-import { toPrecision } from "https://deno.land/x/math/mod.ts";
+import { toPrecision } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 toPrecision("3.4567890", 6); // '3.456789'
 ```
@@ -198,7 +198,7 @@ toPrecision("3.4567890", 6); // '3.456789'
 Where `a numeric` equal to `another numeric`. Similar to Javascript `===` operator.
 
 ```ts
-import { eq } from "https://deno.land/x/math/mod.ts";
+import { eq } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 eq("1.200", "1.2e+0"); // true
 ```
@@ -208,7 +208,7 @@ eq("1.200", "1.2e+0"); // true
 Where `a numeric` greater than `another numeric`. Similar to Javascript `>` operator.
 
 ```ts
-import { gt } from "https://deno.land/x/math/mod.ts";
+import { gt } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 gt(2, "1"); // true
 ```
@@ -218,7 +218,7 @@ gt(2, "1"); // true
 Where `a numeric` greater than or equal to `another numeric`. Similar to Javascript `>=` operator.
 
 ```ts
-import { gte } from "https://deno.land/x/math/mod.ts";
+import { gte } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 gte(2, "1"); // true
 gte(2, "2"); // true
@@ -230,7 +230,7 @@ gte(2, "3"); // false
 Where `a numeric` less than `another numeric`. Similar to Javascript `<` operator.
 
 ```ts
-import { lt } from "https://deno.land/x/math/mod.ts";
+import { lt } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 lt(2, "1"); // false
 lt(2, "2"); // false
@@ -242,7 +242,7 @@ lt(2, "3"); // false
 Where `a numeric` less than or equal to `another numeric`. Similar to Javascript `<=` operator.
 
 ```ts
-import { lte } from "https://deno.land/x/math/mod.ts";
+import { lte } from "https://deno.land/x/math@v1.1.0/mod.ts";
 
 lte(2, "1"); // false
 lte(2, "2"); // true
