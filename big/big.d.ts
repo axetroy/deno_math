@@ -7,35 +7,35 @@
 export type BigSource = number | string | Big;
 
 export const enum Comparison {
-    GT = 1,
-    EQ = 0,
-    LT = -1,
+  GT = 1,
+  EQ = 0,
+  LT = -1
 }
 
 export const enum RoundingMode {
-    /**
+  /**
      * Rounds towards zero.
      * I.e. truncate, no rounding.
      */
-    RoundDown = 0,
-    /**
+  RoundDown = 0,
+  /**
      * Rounds towards nearest neighbour.
      * If equidistant, rounds away from zero.
      */
-    RoundHalfUp = 1,
-    /**
+  RoundHalfUp = 1,
+  /**
      * Rounds towards nearest neighbour.
      * If equidistant, rounds towards even neighbour.
      */
-    RoundHalfEven = 2,
-    /**
+  RoundHalfEven = 2,
+  /**
      * Rounds away from zero.
      */
-    RoundUp = 3,
+  RoundUp = 3
 }
 
 export interface BigConstructor {
-    /**
+  /**
      * Returns a new instance of a Big number object
      *
      * String values may be in exponential, as well as normal (non-exponential) notation.
@@ -45,9 +45,9 @@ export interface BigConstructor {
      *
      * @throws `NaN` on an invalid value.
      */
-    new (value: BigSource): Big;
+  new (value: BigSource): Big;
 
-    /**
+  /**
      * Returns a new instance of a Big number object
      *
      * String values may be in exponential, as well as normal (non-exponential) notation.
@@ -57,9 +57,9 @@ export interface BigConstructor {
      *
      * @throws `NaN` on an invalid value.
      */
-    (value: BigSource): Big;
+  (value: BigSource): Big;
 
-    /**
+  /**
      * Create an additional Big number constructor
      *
      * Values created with the returned constructor will have a separate set of configuration values.
@@ -68,53 +68,53 @@ export interface BigConstructor {
      * In the interest of memory efficiency, all Big number constructors share the same prototype object,
      * so while the DP and RM (and any other own properties) of a constructor are isolated and untouchable by another, its prototype methods are not.
      */
-    (): BigConstructor;
+  (): BigConstructor;
 
-    /**
+  /**
      * The maximum number of decimal places of the results of operations involving division.
      * It is relevant only to the div and sqrt methods, and the pow method when the exponent is negative.
      *
      * 0 to 1e+6 inclusive
      * Default value: 20
      */
-    DP: number;
-    /**
+  DP: number;
+  /**
      * The rounding mode used in the above operations and by round, toExponential, toFixed and toPrecision.
      * Default value: 1
      */
-    RM: number;
-    /**
+  RM: number;
+  /**
      * The negative exponent value at and below which toString returns exponential notation.
      *
      * -1e+6 to 0 inclusive
      * Default value: -7
      */
-    NE: number;
-    /**
+  NE: number;
+  /**
      * The positive exponent value at and above which toString returns exponential notation.
      *
      * 0 to 1e+6 inclusive
      * Default value: 21
      */
-    PE: number;
+  PE: number;
 }
 
 export interface Big {
-    /** Returns a Big number whose value is the absolute value, i.e. the magnitude, of this Big number. */
-    abs(): Big;
-    /**
+  /** Returns a Big number whose value is the absolute value, i.e. the magnitude, of this Big number. */
+  abs(): Big;
+  /**
      * Returns a Big number whose value is the value of this Big number plus n - alias for .plus().
      *
      * @throws `NaN` if n is invalid.
      */
-    add(n: BigSource): Big;
-    /**
+  add(n: BigSource): Big;
+  /**
      * Compare the values.
      *
      * @throws `NaN` if n is invalid.
      */
-    cmp(n: BigSource): Comparison;
-    /**
+  cmp(n: BigSource): Comparison;
+  /**
      * Returns a Big number whose value is the value of this Big number divided by n.
      *
      * If the result has more fraction digits than is specified by Big.DP, it will be rounded to Big.DP decimal places using rounding mode Big.RM.
@@ -123,64 +123,64 @@ export interface Big {
      * @throws `±Infinity` on division by zero.
      * @throws `NaN` on division of zero by zero.
      */
-    div(n: BigSource): Big;
-    /**
+  div(n: BigSource): Big;
+  /**
      * Returns true if the value of this Big equals the value of n, otherwise returns false.
      *
      * @throws `NaN` if n is invalid.
      */
-    eq(n: BigSource): boolean;
-    /**
+  eq(n: BigSource): boolean;
+  /**
      * Returns true if the value of this Big is greater than the value of n, otherwise returns false.
      *
      * @throws `NaN` if n is invalid.
      */
-    gt(n: BigSource): boolean;
-    /**
+  gt(n: BigSource): boolean;
+  /**
      * Returns true if the value of this Big is greater than or equal to the value of n, otherwise returns false.
      *
      * @throws `NaN` if n is invalid.
      */
-    gte(n: BigSource): boolean;
-    /**
+  gte(n: BigSource): boolean;
+  /**
      * Returns true if the value of this Big is less than the value of n, otherwise returns false.
      *
      * @throws `NaN` if n is invalid.
      */
-    lt(n: BigSource): boolean;
-    /**
+  lt(n: BigSource): boolean;
+  /**
      * Returns true if the value of this Big is less than or equal to the value of n, otherwise returns false.
      *
      * @throws `NaN` if n is invalid.
      */
-    lte(n: BigSource): boolean;
-    /**
+  lte(n: BigSource): boolean;
+  /**
      * Returns a Big number whose value is the value of this Big number minus n.
      *
      * @throws `NaN` if n is invalid.
      */
-    minus(n: BigSource): Big;
-    /**
+  minus(n: BigSource): Big;
+  /**
      * Returns a Big number whose value is the value of this Big number modulo n, i.e. the integer remainder of dividing this Big number by n.
      *
      * The result will have the same sign as this Big number, and it will match that of Javascript's % operator (within the limits of its precision) and BigDecimal's remainder method.
      *
      * @throws `NaN` if n is negative or otherwise invalid.
      */
-    mod(n: BigSource): Big;
-    /**
+  mod(n: BigSource): Big;
+  /**
      * Returns a Big number whose value is the value of this Big number times n - alias for .times().
      *
      * @throws `NaN` if n is invalid.
      */
-    mul(n: BigSource): Big;
-    /**
+  mul(n: BigSource): Big;
+  /**
      * Returns a Big number whose value is the value of this Big number plus n.
      *
      * @throws `NaN` if n is invalid.
      */
-    plus(n: BigSource): Big;
-    /**
+  plus(n: BigSource): Big;
+  /**
      * Returns a Big number whose value is the value of this Big number raised to the power exp.
      *
      * If exp is negative and the result has more fraction digits than is specified by Big.DP, it will be rounded to Big.DP decimal places using rounding mode Big.RM.
@@ -190,8 +190,8 @@ export interface Big {
      *
      * Note: High value exponents may cause this method to be slow to return.
      */
-    pow(exp: number): Big;
-    /**
+  pow(exp: number): Big;
+  /**
      * Returns a Big number whose value is the value of this Big number rounded using rounding mode rm to a maximum of dp decimal places.
      *
      * @param dp Decimal places, 0 to 1e+6 inclusive
@@ -199,28 +199,28 @@ export interface Big {
      * @throws `!round!` if dp is invalid.
      * @throws `!Big.RM!` if rm is invalid.
      */
-    round(dp?: number, rm?: RoundingMode): Big;
-    /**
+  round(dp?: number, rm?: RoundingMode): Big;
+  /**
      * Returns a Big number whose value is the square root of this Big number.
      *
      * If the result has more fraction digits than is specified by Big.DP, it will be rounded to Big.DP decimal places using rounding mode Big.RM.
      *
      * @throws `NaN` if this Big number is negative.
      */
-    sqrt(): Big;
-    /**
+  sqrt(): Big;
+  /**
      * Returns a Big number whose value is the value of this Big number minus n - alias for .minus().
      *
      * @throws `NaN` if n is invalid.
      */
-    sub(n: BigSource): Big;
-    /**
+  sub(n: BigSource): Big;
+  /**
      * Returns a Big number whose value is the value of this Big number times n.
      *
      * @throws `NaN` if n is invalid.
      */
-    times(n: BigSource): Big;
-    /**
+  times(n: BigSource): Big;
+  /**
      * Returns a string representing the value of this Big number in exponential notation to a fixed number of decimal places dp.
      *
      * If the value of this Big number in exponential notation has more digits to the right of the decimal point than is specified by dp,
@@ -233,8 +233,8 @@ export interface Big {
      * @param dp Decimal places, 0 to 1e+6 inclusive
      * @throws `!toFix!` if dp is invalid.
      */
-    toExponential(dp?: number): string;
-    /**
+  toExponential(dp?: number): string;
+  /**
      * Returns a string representing the value of this Big number in normal notation to a fixed number of decimal places dp.
      *
      * If the value of this Big number in normal notation has more digits to the right of the decimal point than is specified by dp,
@@ -250,8 +250,8 @@ export interface Big {
      * @param dp Decimal places, 0 to 1e+6 inclusive
      * @throws `!toFix!` if dp is invalid.
      */
-    toFixed(dp?: number): string;
-    /**
+  toFixed(dp?: number): string;
+  /**
      * Returns a string representing the value of this Big number to the specified number of significant digits sd.
      *
      * If the value of this Big number has more digits than is specified by sd, the return value will be rounded to sd significant digits using rounding mode Big.RM.
@@ -265,8 +265,8 @@ export interface Big {
      * @param sd Significant digits, 1 to 1e+6 inclusive
      * @throws `!toPre!` if sd is invalid.
      */
-    toPrecision(sd?: number): string;
-    /**
+  toPrecision(sd?: number): string;
+  /**
      * Returns a string representing the value of this Big number.
      *
      * If this Big number has a positive exponent that is equal to or greater than 21, or a negative exponent equal to or less than -7, then exponential notation is returned.
@@ -274,8 +274,8 @@ export interface Big {
      * The point at which toString returns exponential rather than normal notation can be adjusted by changing
      * the value of Big.E_POS and Big.E_NEG. By default, Big numbers correspond to Javascript's number type in this regard.
      */
-    toString(): string;
-    /**
+  toString(): string;
+  /**
      * Returns a string representing the value of this Big number.
      *
      * If this Big number has a positive exponent that is equal to or greater than 21, or a negative exponent equal to or less than -7, then exponential notation is returned.
@@ -283,8 +283,8 @@ export interface Big {
      * The point at which toString returns exponential rather than normal notation can be adjusted by changing
      * the value of Big.E_POS and Big.E_NEG. By default, Big numbers correspond to Javascript's number type in this regard.
      */
-    valueOf(): string;
-    /**
+  valueOf(): string;
+  /**
      * Returns a string representing the value of this Big number.
      *
      * If this Big number has a positive exponent that is equal to or greater than 21, or a negative exponent equal to or less than -7, then exponential notation is returned.
@@ -292,19 +292,19 @@ export interface Big {
      * The point at which toString returns exponential rather than normal notation can be adjusted by changing
      * the value of Big.E_POS and Big.E_NEG. By default, Big numbers correspond to Javascript's number type in this regard.
      */
-    toJSON(): string;
-    /**
+  toJSON(): string;
+  /**
      * Returns an array of single digits
      */
-    c: number[];
-    /**
+  c: number[];
+  /**
      * Returns the exponent, Integer, -1e+6 to 1e+6 inclusive
      */
-    e: number;
-    /**
+  e: number;
+  /**
      * Returns the sign, -1 or 1
      */
-    s: number;
+  s: number;
 }
 
 export const Big: BigConstructor;
@@ -316,39 +316,39 @@ export type BigSource_ = BigSource;
 export default Big;
 
 declare global {
-    namespace BigJs {
-        type Big = Big_;
-        type BigConstructor = BigConstructor_;
-        type BigSource = BigSource_;
+  namespace BigJs {
+    type Big = Big_;
+    type BigConstructor = BigConstructor_;
+    type BigSource = BigSource_;
 
-        const enum Comparison {
-            GT = 1,
-            EQ = 0,
-            LT = -1,
-        }
+    const enum Comparison {
+      GT = 1,
+      EQ = 0,
+      LT = -1
+    }
 
-        const enum RoundingMode {
-            /**
+    const enum RoundingMode {
+      /**
              * Rounds towards zero.
              * I.e. truncate, no rounding.
              */
-            RoundDown = 0,
-            /**
+      RoundDown = 0,
+      /**
              * Rounds towards nearest neighbour.
              * If equidistant, rounds away from zero.
              */
-            RoundHalfUp = 1,
-            /**
+      RoundHalfUp = 1,
+      /**
              * Rounds towards nearest neighbour.
              * If equidistant, rounds towards even neighbour.
              */
-            RoundHalfEven = 2,
-            /**
+      RoundHalfEven = 2,
+      /**
              * Rounds away from zero.
              */
-            RoundUp = 3,
-        }
+      RoundUp = 3
     }
+  }
 
-    const Big: BigJs.BigConstructor;
+  const Big: BigJs.BigConstructor;
 }

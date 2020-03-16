@@ -12,5 +12,5 @@ jobs:
         with:
           deno-version: 0.36.0
       - run: |
-          deno fmt --check *.md **/*.md *.ts **/*.ts
-          deno test --allow-env --allow-write --allow-net
+          deno fmt **/*.ts --check
+          deno test -A
