@@ -27,4 +27,4 @@ export * from "./lt.ts";
 export * from "./lte.ts";
 
 // complex
-export * from "./matrix/mod";
+export * from "./matrix/mod.ts";

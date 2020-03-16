@@ -165,7 +165,7 @@ round("3.456", 2); // '3.46'
 
 ### toExponential
 
-get a exponential notation string from `a numeric`. Similar to `Number.prototype.toExponential`.
+get an exponential notation string from `a numeric`. Similar to `Number.prototype.toExponential`.
 
 ```ts
 import { toExponential } from "https://deno.land/x/math/mod.ts";
@@ -205,7 +205,7 @@ eq("1.200", "1.2e+0"); // true
 
 ### gt
 
-Where `a numeric` greater then `another numeric`. Similar to Javascript `>` operator.
+Where `a numeric` greater than `another numeric`. Similar to Javascript `>` operator.
 
 ```ts
 import { gt } from "https://deno.land/x/math/mod.ts";
@@ -215,7 +215,7 @@ gt(2, "1"); // true
 
 ### gte
 
-Where `a numeric` greater then or equal to `another numeric`. Similar to Javascript `>=` operator.
+Where `a numeric` greater than or equal to `another numeric`. Similar to Javascript `>=` operator.
 
 ```ts
 import { gte } from "https://deno.land/x/math/mod.ts";
@@ -227,7 +227,7 @@ gte(2, "3"); // false
 
 ### lt
 
-Where `a numeric` less then `another numeric`. Similar to Javascript `<` operator.
+Where `a numeric` less than `another numeric`. Similar to Javascript `<` operator.
 
 ```ts
 import { lt } from "https://deno.land/x/math/mod.ts";
@@ -239,7 +239,7 @@ lt(2, "3"); // false
 
 ### lte
 
-Where `a numeric` less then or equal to `another numeric`. Similar to Javascript `<=` operator.
+Where `a numeric` less than or equal to `another numeric`. Similar to Javascript `<=` operator.
 
 ```ts
 import { lte } from "https://deno.land/x/math/mod.ts";

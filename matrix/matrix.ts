@@ -45,7 +45,7 @@ export class Matrix {
     const origin = this.matrix.flat();
 
     for (let i = 0; i < rowNumber; i++) {
-      let row = [];
+      let row: number[] = [];
       while (row.length !== colNumber) {
         row = row.concat(origin.splice(0, colNumber));
       }

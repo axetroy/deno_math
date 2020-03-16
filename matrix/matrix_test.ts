@@ -2,9 +2,10 @@
 import {
   assertEquals,
   assertThrows
-} from "https://deno.land/std@v0.27.0/testing/asserts.ts";
-import { test } from "https://deno.land/std@v0.27.0/testing/mod.ts";
+} from "https://deno.land/std@v0.36.0/testing/asserts.ts";
 import { Matrix } from "./matrix.ts";
+
+const { test } = Deno;
 
 test({
   name: "[matrix] invalid matrix",
