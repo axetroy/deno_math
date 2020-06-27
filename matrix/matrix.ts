@@ -18,7 +18,7 @@ function ensureMatrixSize(a: Matrix, b: Matrix) {
 export class Matrix {
   constructor(public matrix: IMatrix) {
     const colLength = (matrix[0] || []).length;
-    const isValidcolLength = matrix.every(row => row.length === colLength);
+    const isValidcolLength = matrix.every((row) => row.length === colLength);
     if (!isValidcolLength) {
       throw new Error("Not available matrix.");
     }
@@ -37,7 +37,7 @@ export class Matrix {
 
     if (rowNumber * colNumber !== originRowNumber * originColNumber) {
       throw new Error(
-        `Can not change the shape from (${originRowNumber}, ${originColNumber}) to (${rowNumber}, ${colNumber})`
+        `Can not change the shape from (${originRowNumber}, ${originColNumber}) to (${rowNumber}, ${colNumber})`,
       );
     }
 
@@ -80,7 +80,7 @@ export class Matrix {
         const [_, colSize] = n.shape;
 
         for (let i = 0; i < colSize; i++) {
-          const row2 = n.matrix.map(v => v[i]);
+          const row2 = n.matrix.map((v) => v[i]);
           const c = row
             .map((v, index) => v * row2[index])
             .reduce((a, b) => a + b, 0);
@@ -94,7 +94,7 @@ export class Matrix {
     } else {
       const output = [];
       for (const row of this.matrix) {
-        output.push(row.map(v => v * n));
+        output.push(row.map((v) => v * n));
       }
       return new Matrix(output);
     }
@@ -113,7 +113,7 @@ export class Matrix {
         const [_, colSize] = n.shape;
 
         for (let i = 0; i < colSize; i++) {
-          const row2 = n.matrix.map(v => v[i]);
+          const row2 = n.matrix.map((v) => v[i]);
           const c = row
             .map((v, index) => v / row2[index])
             .reduce((a, b) => a + b, 0);
@@ -127,7 +127,7 @@ export class Matrix {
     } else {
       const output = [];
       for (const row of this.matrix) {
-        output.push(row.map(v => v / n));
+        output.push(row.map((v) => v / n));
       }
       return new Matrix(output);
     }
@@ -196,7 +196,7 @@ export class Matrix {
    * @param col
    */
   public col(col: number): number[] {
-    return this.matrix.map(v => v[col]);
+    return this.matrix.map((v) => v[col]);
   }
   /**
    * Get a value of a point

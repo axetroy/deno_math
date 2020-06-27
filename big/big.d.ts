@@ -9,7 +9,7 @@ export type BigSource = number | string | Big;
 export const enum Comparison {
   GT = 1,
   EQ = 0,
-  LT = -1
+  LT = -1,
 }
 
 export const enum RoundingMode {
@@ -31,7 +31,7 @@ export const enum RoundingMode {
   /**
      * Rounds away from zero.
      */
-  RoundUp = 3
+  RoundUp = 3,
 }
 
 export interface BigConstructor {
@@ -324,7 +324,7 @@ declare global {
     const enum Comparison {
       GT = 1,
       EQ = 0,
-      LT = -1
+      LT = -1,
     }
 
     const enum RoundingMode {
@@ -346,7 +346,7 @@ declare global {
       /**
              * Rounds away from zero.
              */
-      RoundUp = 3
+      RoundUp = 3,
     }
   }
 
