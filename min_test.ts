@@ -2,7 +2,7 @@
 import {
   assertEquals,
   assertThrows
-} from "https://deno.land/std@v0.36.0/testing/asserts.ts";
+} from "https://deno.land/std@v0.59.0/testing/asserts.ts";
 import { min } from "./min.ts";
 
 const { test } = Deno;

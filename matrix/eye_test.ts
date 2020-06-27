@@ -1,7 +1,7 @@
 // Copyright 2018-2019 the Deno authors. All rights reserved. MIT license.
 import {
   assertEquals,
-} from "https://deno.land/std@v0.36.0/testing/asserts.ts";
+} from "https://deno.land/std@v0.59.0/testing/asserts.ts";
 import { eye } from "./eye.ts";
 
 const { test } = Deno;
