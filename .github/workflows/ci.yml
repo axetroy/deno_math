@@ -8,9 +8,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - uses: denolib/setup-deno@master
+      - uses: denolib/setup-deno@v1
         with:
-          deno-version: 0.36.0
+          deno-version: v1.x
       - run: |
           deno fmt **/*.ts --check
           deno test -A
