@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - uses: denolib/setup-deno@v1.3.x
+      - uses: denolib/setup-deno@v1.3
         with:
           deno-version: v1.x
       - run: |
